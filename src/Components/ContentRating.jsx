@@ -20,6 +20,13 @@ class ContentRating extends Component {
           dislikes: prevState.dislikes + 1,
           totalRatings: prevState.totalRatings + 1
         }));
+      },
+      handleClear:() => {
+        this.setState((prevState) => ({
+            ikes: prevState.likes = 0,
+          dislikes: prevState.dislikes = 0,
+          totalRatings: prevState.totalRatings = 0
+        }));
       }
     }
    }
@@ -40,6 +47,9 @@ class ContentRating extends Component {
             Dislike ({this.state.dislikes})
         </button>   
         <p>Total Ratings: {this.state.totalRatings}</p>
+        <button className="clear-button" onClick={this.state.handleClear}>
+            Clear 
+          </button>
         </div>
      </div>
      </>
